@@ -3,6 +3,7 @@ require "test_helper"
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   capabilities = Selenium::WebDriver::Remote::Capabilities.send ENV["BROWSER"]
   capabilities.platform = ENV["PLATFORM"]
+  capabilities.version = ENV["VERSION"]
 
   capabilities['seleniumVersion'] = Selenium::WebDriver::VERSION
   capabilities['tunnelIdentifier'] = ENV['TUNNEL_ID']
